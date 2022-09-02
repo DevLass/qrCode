@@ -1,38 +1,93 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab+Highlight:wght@400;700&display=swap');
+
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+  animation: color-change-5x 8s linear infinite alternate both;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+a{
+  font-family: 'Zilla Slab Highlight', cursive;
+  color: white;
+  font-weight: bold;
+  font-size: 2.5rem;
+  animation: vibrate-1 0.6s linear infinite both;
+  transition: 250ms;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+a:hover{
+  animation: none;
+}
+
+.container{
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  height: 100vh;
 }
 
-.App-link {
-  color: #61dafb;
+.qrcode{
+  background-color: white;
+  padding: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+input{
+  height: 38px;
+  border: solid rgb(0, 0, 0) 2px;
+  max-width: 500px;
+  width: 100%;
+  margin: 24px 0px;
+  padding: 8px;
+  outline: none;
+}
+
+
+@keyframes color-change-5x {
+  0% {
+    background: #19dcea;
   }
-  to {
-    transform: rotate(360deg);
+  25% {
+    background: #b22cff;
+  }
+  50% {
+    background: #ea2222;
+  }
+  75% {
+    background: #f5be10;
+  }
+  100% {
+    background: #3bd80d;
+  }
+}
+
+@keyframes vibrate-1 {
+  0% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+  20% {
+    -webkit-transform: translate(-2px, 2px);
+            transform: translate(-2px, 2px);
+  }
+  40% {
+    -webkit-transform: translate(-2px, -2px);
+            transform: translate(-2px, -2px);
+  }
+  60% {
+    -webkit-transform: translate(2px, 2px);
+            transform: translate(2px, 2px);
+  }
+  80% {
+    -webkit-transform: translate(2px, -2px);
+            transform: translate(2px, -2px);
+  }
+  100% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
   }
 }

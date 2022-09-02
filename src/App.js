@@ -1,23 +1,34 @@
-import logo from './logo.svg';
+import { useState } from 'react';
+import QRCode from 'react-qr-code';
+import QRCodeLink from 'qrcode';
 import './App.css';
 
 function App() {
+
+  const [link, setLink] = useState('')
+  const [qrcodeLink, setqrcodeLink] = useState('')
+  
+  function handleGenerate(qrCodeurl){
+    QRCodeLink.toDataURL(qrCodeurl, {
+      width: 600,
+      margin: 3,
+    }, function(err, url){
+      setqrcodeLink(url);
+    })
+  }
+
+  function handleQrcode(e){
+    setLink(e.target.value)
+    handleGenerate(e.target.value)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='container'>
+      <div className="qrcode">
+        <QRCode value={link}/>
+      </div>
+      <input type="text" placeholder='Your Link' value={link} onChange={ (e) => handleQrcode(e)} />
+      <a href={qrcodeLink} download={'qrcode.png'}>DownLoad </a>
     </div>
   );
 }
