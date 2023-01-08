@@ -1,7 +1,7 @@
 <h1 align="center"> Hey there, i'm Nich, and this is my QRCode Generator with React</h1>
  
 <p align="center">
-  <img src="https://github.com/italicnich/qrCode/blob/master/readmeimg/img-gif.gif" alt="Page Preview">
+  <img src="https://github.com/DevLass/qrCode/blob/master/readmeimg/img-gif.gif" alt="Page Preview">
 </p>
 
 <h3 align="justify"> <i>Hey there, this is a very simple project with react. It allows you to general and downloads QR code's. It uses two libraries: <a href="https://www.npmjs.com/package/react-qr-code">react-qr-code</a> to generate and <a href="https://www.npmjs.com/package/qrcode">qrcode</a> to download. It also uses "UseState" from react and that's it. It's a really simple project :p. </i> </h3>
